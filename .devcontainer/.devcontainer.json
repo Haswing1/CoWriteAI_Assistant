@@ -1,0 +1,24 @@
+{
+    "name": "CoWriteAI_Assistant", // Adjust the name if you'd like
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.10", // Base Python image
+
+    // If you need a GPU for LLAMAIndex or other libraries, modify this 
+    "features": {
+        "ghcr.io/devcontainers/features/gpu:1": {} 
+    },
+
+    "customizations": {
+        "vscode": {
+            "settings": { 
+                "python.defaultInterpreterPath": "/usr/local/bin/python3" // Ensure this matches your Python path
+            },
+            "extensions": [
+                "ms-python.python" // Essential Python extension
+                // Add other extensions you'll need (e.g., for code formatting, linting, etc.)
+            ]
+        },
+
+        // Use 'postCreateCommand' to install dependencies
+       //"postCreateCommand": "pip install llama-index langchain haystack <other-libraries>"
+    }
+}
