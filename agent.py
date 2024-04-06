@@ -10,31 +10,23 @@ load_dotenv(Hugging_Face_Token)
 
 # Access API keys 
 hf_token = os.getenv("HUGGINGFACE_API_KEY")
+
 gemini_api_key = os.getenv("GEMINI_API_KEY")
-gemini_secret_key = os.getenv("GEMINI_SECRET_KEY")
 
-# ... Your LLAMAIndex loading logic here...
 
-# ... Your Hugging Face model initialization here ...
-llm = HuggingFaceLLM(model_name="distilgpt2")  # Replace if needed
+class Agent:
+    def __init__(self, role, goal, backstory, verbose, allow_delegation, llm, tools):
+        self.role = role
+        self.goal = goal
+        self.backstory = backstory
+        self.verbose = verbose
+        self.allow_delegation = allow_delegation
+        self.llm = llm
+        self.tools = tools
 
-# Function to handle user questions (you'll expand upon this)
-def process_user_query(question):
-    # ... Logic to analyze the question ...
-
-    # Potential usage examples:
-    if "summarize" in question:
-        # ... call LLAMAIndex to summarize based on index.text ... 
-        pass  
-    elif "crypto" in question:  
-        # ... Use Gemini API (with API keys) to fetch relevant data...
-        # ... Potentially pass data to Hugging Face LLM for analysis or generation ...
+    def perform_task(self, task):
+        # Logic to perform the task using the tools and LLM
         pass
-    else:
-        # ... Default handling ...
-        pass
-
-    # ... More logic to format and return the response ...
 
 
 if __name__ == "__main__":
