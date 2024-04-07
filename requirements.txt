@@ -1,6 +1,10 @@
 langchain_google_genai
 crewai
 duckduckgo-search
-pexels_API
-pixabay_API
 huggingface_hub
+llama-index
+langchain
+haystack
+dotenv
+os
+<other-libraries>
