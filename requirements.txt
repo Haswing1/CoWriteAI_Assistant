@@ -6,5 +6,6 @@ llama-index
 langchain
 haystack
 dotenv
+poetry
 os
 <other-libraries>
